@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snocks Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        /* Custom Tailwind Configuration for Black & Gold Theme */
+        :root {
+            --color-gold: #FFD700;
+            --color-black-bg: #1A1A1A;
+            --color-dark-text: #E5E5E5;
+        }
+
+        .gold-text { color: var(--color-gold); }
+        .bg-black-theme { background-color: var(--color-black-bg); }
+        .focus\:border-gold:focus { border-color: var(--color-gold); }
+        .auth-bg {
+            /* Subtle background image/pattern for an expensive look */
+            background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.95)), url('auth-pattern.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-black-theme text-dark-text font-sans min-h-screen auth-bg flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-gray-900 p-8 md:p-10 rounded-xl shadow-2xl border border-gold/20 
+                animate__animated animate__zoomIn">
+
+        <h1 class="text-4xl font-extrabold text-center mb-2 gold-text tracking-wider">
+            SNOCKS
+        </h1>
+        <p class="text-center text-gray-400 mb-8 text-lg">
+            Login to your premium account.
+        </p>
+
+        <form id="login-form" class="space-y-6">
+            
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com"
+                       class="w-full bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700 transition duration-300">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                <input type="password" id="password" required placeholder="********"
+                       class="w-full bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700 transition duration-300">
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-gold hover:bg-yellow-400 text-black font-extrabold py-3 rounded transition duration-300 transform hover:scale-[1.02] uppercase tracking-widest shadow-lg">
+                Sign In
+            </button>
+        </form>
+
+        <div class="text-center mt-6">
+            <a href="register.html" class="text-sm text-gray-400 hover:gold-text transition duration-200">
+                Don't have an account? **Register here.**
+            </a>
+        </div>
+        <div class="text-center mt-3">
+            <a href="index.html" class="text-sm text-gray-500 hover:gold-text transition duration-200">
+                &larr; Back to Home
+            </a>
+        </div>
+    </div>
+    
+    </body>
+</html>
