@@ -33,5 +33,27 @@ public static class ProdutoRoute
             await context.SaveChangesAsync();
         });
         
+        app.MapPut("/produtos",
+        async (SnackBarContext context, ReservaRequest req) =>
+        {
+            var product = await context.Produtos.FirstOrDefaultAsync(x => x.Id == req.produtoId);
+            if (product is null)
+                return Results.NotFound("Produto não encontrado");
+            
+            var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == req.usuarioId);
+            if (usuario is null)
+                return Results.NotFound("Usuário não encontrado");
+
+            product.ReservarProduto(req.quantidade);
+
+            var mov = new Movimentacao(
+                req.produtoId,
+                req.usuarioId,
+                req.tipo,
+                req.quantidade
+            );
+
+            return Results.Ok(mov);
+        });
     }
 }

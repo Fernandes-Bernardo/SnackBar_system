@@ -20,4 +20,20 @@ namespace SnackBar_system.Models;
     public int QuantidadeTotal { get; set; }
     public int QuantidadeDisponivel { get; set; }
     public int QuantidadeReserva { get; set; }
+
+        public void AdicionarEstoque(int qty)
+    {
+        QuantidadeTotal += qty;
+    }
+
+    public void RegistrarVenda(int qty)
+    {
+        QuantidadeDisponivel -= qty;
+    }
+
+    public void ReservarProduto(int qty)
+    {
+        QuantidadeDisponivel -= qty;
+        QuantidadeReserva += qty;
+    }
 }

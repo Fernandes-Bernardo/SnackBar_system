@@ -8,3 +8,10 @@ public record ProdutoRequest(
     int quantidadeDisponivel,
     int quantidadeReserva
 );
+
+public record ReservaRequest(
+    Guid produtoId,
+    Guid usuarioId,
+    int quantidade,
+    string tipo = "Reserva"
+);
