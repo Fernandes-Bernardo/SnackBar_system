@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snock Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom Tailwind Configuration for Black & Gold Theme */
+        :root {
+            --color-gold: #FFD700;
+            --color-black-bg: #1A1A1A;
+            --color-dark-text: #E5E5E5;
+        }
+
+        .gold-text { color: var(--color-gold); }
+        .bg-black-theme { background-color: var(--color-black-bg); }
+        .focus\:border-gold:focus { border-color: var(--color-gold); }
+        .admin-table th { background-color: #2c2c2c; }
+        .admin-table td { border-bottom: 1px solid #333; }
+
+        /* Custom Scrollbar for better dark-theme aesthetics */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-thumb { background-color: var(--color-gold); border-radius: 5px; }
+        ::-webkit-scrollbar-track { background-color: var(--color-black-bg); }
+    </style>
+</head>
+<body class="bg-black-theme text-dark-text font-sans min-h-screen">
+
+    <header class="bg-gray-900 border-b border-gold/50 p-6 shadow-xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-4xl font-extrabold gold-text">
+                Dashboard
+            </h1>
+            <button class="bg-gray-800 hover:bg-gold hover:text-black text-white font-semibold py-2 px-4 rounded transition duration-300">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8">
+        
+        <h2 class="text-3xl font-bold mb-6 text-white border-b border-gold pb-2">
+            Gerenciar Menu: <span id="current-menu-title" class="gold-text capitalize"></span>
+        </h2>
+
+        <div id="admin-category-selector" class="flex flex-wrap gap-4 mb-10">
+            </div>
+
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-10 border border-gold/20">
+            <h3 class="text-2xl font-bold mb-4 gold-text">Adicionar Novo item</h3>
+            <form id="add-item-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="name" placeholder="Nome (e.g, Combo Bobs)" required class="bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700">
+                <input type="number" id="price" step="0.01" placeholder="Preço (e.g., 12.99)" required class="bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700">
+                <textarea id="description" placeholder="Descrição" rows="2" required class="bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700 col-span-full"></textarea>
+                <input type="text" id="image" placeholder="URL De Imagem (e.g., https://...)" class="bg-gray-800 p-3 rounded text-white focus:outline-none focus:border-gold border border-gray-700 col-span-full">
+                
+                <button type="submit" class="col-span-full bg-yellow-400 hover:bg-yellow-400 text-white font-extrabold py-3 rounded transition duration-300 transform hover:scale-[1.01]">
+                    Criar Items
+                </button>
+            </form>
+        </div>
+
+        <div class="bg-yellow-400 bg-gray-900 p-6 rounded-xl shadow-lg border border-gold/20 overflow-x-auto">
+            <h3 class="text-2xl font-bold mb-4 gold-text">Items Atuais  </h3>
+            <table class="w-full admin-table text-left">
+                <thead>
+                    <tr>
+                        <th class="p-3 text-sm uppercase tracking-wider">ID</th>
+                        <th class="p-3 text-sm uppercase tracking-wider">Nome</th>
+                        <th class="p-3 text-sm uppercase tracking-wider">Preço</th>
+                        <th class="p-3 text-sm uppercase tracking-wider">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="menu-items-list">
+                    <tr><td colspan="4" class="text-center p-4 text-gray-500">Selecione um menu para visualizar items</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

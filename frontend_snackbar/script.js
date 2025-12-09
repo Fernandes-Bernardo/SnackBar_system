@@ -11,21 +11,21 @@ const API_ENDPOINTS = {
 
 // Mock data structure to simulate the response from your 5 APIs
 const MOCK_API_DATA = {
-    'burgers': [
+    'Burgers': [
         { id: 1, name: "The Gold Standard Burger", desc: "Black truffle mayo, 24k gold leaf patty, on a jet black bun.", price: 24.99, image: 'https://images.unsplash.com/photo-1571091655782-70c8d8879d71?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
         { id: 2, name: "Smoky BBQ Blackout Ribs", desc: "Slow-cooked ribs with a dark molasses and gold shimmer glaze.", price: 32.00, image: 'https://images.unsplash.com/photo-1596205763591-6f4142d5940d?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ],
-    'sides': [
+    'Acompanhamentos': [
         { id: 3, name: "Truffle Gold Fries", desc: "Crispy thin-cut fries tossed in truffle oil and edible gold dust.", price: 8.99, image: 'https://images.unsplash.com/photo-1541544719258-414868018318?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
         { id: 4, name: "Ebony Onion Petals", desc: "Thick-cut onions in a black pepper crust, served with chipotle gold sauce.", price: 7.50, image: 'https://images.unsplash.com/photo-1513292415147-987593c66289?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ],
-    'drinks': [
+    'Bebidas': [
         { id: 5, name: "Velvet Black Espresso", desc: "Deep, rich espresso with a gold flake crema.", price: 5.00, image: 'https://images.unsplash.com/photo-1557997321-2947a98555ce?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ],
-    'desserts': [
+    'Sobremesas': [
         { id: 6, name: "Molten Gold Lava Cake", desc: "Dark chocolate cake with a molten gold caramel center.", price: 9.50, image: 'https://images.unsplash.com/photo-1620353139049-d128b9d562f7?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ],
-    'combos': [
+    'Combos': [
         { id: 7, name: "The Royal Combo", desc: "Burger, Truffle Gold Fries, and Velvet Black Espresso. A full experience.", price: 34.99, image: 'https://images.unsplash.com/photo-1565299624942-4386810a7c64?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ],
 };
@@ -80,7 +80,7 @@ function createMenuItemCard(item, index) {
                 <button class="w-full py-3 bg-gold text-black font-semibold rounded-full uppercase tracking-wider 
                                opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0
                                transition-all duration-300 ease-out hover:bg-yellow-400">
-                    Add to Order
+                    Adicionar ao pedido
                 </button>
             </div>
         </div>
