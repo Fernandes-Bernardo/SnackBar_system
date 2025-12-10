@@ -24,7 +24,19 @@ public static class UsuarioRoute
             return Results.Ok(user);
         });
 
-        
+        app.MapDelete("/usuarios/{nome}", 
+        async(string nome, SnackBarContext context) =>
+        {
+            var user = await context.Usuarios.FirstOrDefaultAsync(x => x.Nome == nome);
+            
+            if (user == null)
+                return Results.NotFound();
+
+            context.Usuarios.Remove(user);
+            await context.SaveChangesAsync();
+
+            return Results.Ok();
+        });
 
     }
 }

@@ -6,3 +6,7 @@ public record UsuarioRequest(
     string senha,
     string tipo
 );
+
+public record UsuarioDeleteName(
+    string name
+);
