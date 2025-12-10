@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SnackBar_system;
 using SnackBar_system.Data;
+using SnackBar_system.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.ProdutosRoutes();
+app.UsuarioRoutes();
+app.MovimentacoesRoute();
 
 // estudar Migrations
 
